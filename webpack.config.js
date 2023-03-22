@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -27,13 +29,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
         exclude: /node_modules/,
       }
     ]
   },
-
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(), // css를 줄여주는 플러그인
+    ],
+  },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
