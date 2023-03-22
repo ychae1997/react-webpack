@@ -3,10 +3,10 @@
   --background: #faf8f4;
   --surface: #ffffff;
   --primary: #5e7c96;
-  --secondary: #DA7F8F;
+  --secondary: #da7f8f;
   --form-surface: #f6eed8;
-  --visited: #E1E5EA;
-  --link: #A7BBC7;
+  --visited: #e1e5ea;
+  --link: #a7bbc7;
 }
 
 * {
@@ -18,10 +18,10 @@
 button,
 input,
 textarea {
-    font-size: 100%; /* 1 */
-    vertical-align: baseline; /* 3 */
-    line-height: normal;
-    vertical-align: middle; /* 3 */
+  font-size: 100%; /* 1 */
+  vertical-align: baseline; /* 3 */
+  line-height: normal;
+  vertical-align: middle; /* 3 */
 }
 
 body {

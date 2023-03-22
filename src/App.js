@@ -1,8 +1,8 @@
-import { Form, Discussions } from "./components";
-import { useEffect, useState } from "react";
+import { Form, Discussions } from './components';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const domain = "http://localhost:3001";
+  const domain = 'http://localhost:3001';
   const [discussions, setDiscussions] = useState([]);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function App() {
   }, []);
 
   const getDiscussion = () => {
-    return fetch(domain + "/discussions")
+    return fetch(domain + '/discussions')
       .then((res) => res.json())
       .then((data) => {
         setDiscussions(data);
@@ -23,11 +23,11 @@ function App() {
       author: author,
       bodyHTML: bodyText,
     };
-    fetch(domain + "/discussions/", {
-      method: "POST",
+    fetch(domain + '/discussions/', {
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(newDiscussionData),
     }).then((res) => {
@@ -39,7 +39,7 @@ function App() {
 
   const deleteDiscussion = (id) => {
     fetch(domain + `/discussions/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     }).then((res) => {
       if (res.status === 202 || res.status === 204) {
         getDiscussion();

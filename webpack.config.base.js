@@ -1,6 +1,6 @@
-const path = require("path");
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
@@ -23,16 +23,16 @@ module.exports = {
             presets: [
               ['@babel/preset-env'],
               ['@babel/preset-react', { runtime: 'automatic' }],
-            ]
-          }
-        }
+            ],
+          },
+        },
       },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
         exclude: /node_modules/,
-      }
-    ]
+      },
+    ],
   },
   optimization: {
     minimizer: [
