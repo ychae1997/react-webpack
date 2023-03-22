@@ -11,6 +11,9 @@ module.exports = merge(baseConfig, {
     port: 3000,
     hot: true,
   },
+  optimization: {
+    runtimeChunk: 'single',
+  }
 });
 
 // hot : true - 웹팩으로 빌드한 결과물 실시간으로 반영
