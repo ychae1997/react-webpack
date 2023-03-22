@@ -7,7 +7,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'app.bundle.js',
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
@@ -41,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      // filename: 'style.css',
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
